@@ -2323,7 +2323,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 os.execute('rm -rf TOKYO.lua')
-download('https://raw.githubusercontent.com/BBTBB/TOKYO/main/TOKYO.lua','TOKYO.lua')
+download('https://raw.githubusercontent.com/mfmviip/TOKYOv5/main/TOKYO.lua','TOKYO.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ تم تحديث السورس * ',"md",true)  
 end
 if text == '『 تعطيل الاذاعه 』' or text == 'تعطيل الاذاعه' then

@@ -12126,7 +12126,7 @@ end
     MFMVIP = "Was Die . ✘ المالك"
 Redis:incrby(TheTOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TheTOKYO.."nool:flotysb"..msg.sender.user_id) or 0
-local teex = "اشعار ايداع "..𝙈𝙐𝙎𝙏𝘼𝙁𝘼.."\nالمبلغ : "..F.." بتكوين 💰\nوظيفتك : مالك البوت وعلى راسي \nنوع العملية : اضافة الاستحقاق\nرصيدك الآن : "..ballancee.." بتكوين 💰"
+local teex = "اشعار ايداع "..MFMVIP.."\nالمبلغ : "..F.." بتكوين 💰\nوظيفتك : مالك البوت وعلى راسي \nنوع العملية : اضافة الاستحقاق\nرصيدك الآن : "..ballancee.." بتكوين 💰"
 LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TheTOKYO.."innoo" .. msg.sender.user_id,600, true)
 end

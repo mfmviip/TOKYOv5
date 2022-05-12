@@ -1562,7 +1562,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اضفت الرد بنجاح
 end  
 end
 if text and text:match("^(.*)$") then
-if Redis:get(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
+if Redis:get(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
 Redis:set(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
 Redis:set(TheTOKYO.."TOKYO:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..text..msg_chat_id)   

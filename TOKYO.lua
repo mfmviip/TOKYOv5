@@ -1604,7 +1604,7 @@ return false
 end
 end
 if text and text:match("^(.*)$") then
-if Redis:get(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id.."") == "true2" then
+if Redis:get(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id.."") == "true2" then
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..text..msg_chat_id)   
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Vico"..text..msg_chat_id)   
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     

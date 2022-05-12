@@ -130,7 +130,7 @@ Status = 0
 DevelopersQ = Redis:sismember(TheTOKYO.."TOKYO:DevelopersQ:Groups",UserId) 
 if UserId == 911945965 then
 Status = true
-elseif UserId == 911945965 then
+elseif UserId == 758381470 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -157,7 +157,7 @@ StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 911945965 then
 Status = 'مبرمج السورس'
 elseif UserId == 758381470 then
-Status = 'القيادة #حمادة '
+Status = 'القيادة حمادة '
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheTOKYO then
@@ -736,7 +736,7 @@ Distinguished = Redis:sismember(TheTOKYO.."TOKYO:Distinguished:Group"..ChatId,Us
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 911945965 then
 Status = true
-elseif UserId == 911945965 then
+elseif UserId == 758381470 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -775,7 +775,7 @@ Distinguished = Redis:sismember(TheTOKYO.."TOKYO:Distinguished:Group"..ChatId,Us
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 911945965 then
 Status = true
-elseif UserId == 911945965 then
+elseif UserId == 758381470 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -904,8 +904,8 @@ end
 if tonumber(msg.sender.user_id) == 911945965 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 911945965 then
-msg.Name_Controller = 'مطور السورس '
+elseif tonumber(msg.sender.user_id) == 758381470 then
+msg.Name_Controller = 'القيادة حمادة '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1

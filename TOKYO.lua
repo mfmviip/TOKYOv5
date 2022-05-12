@@ -1678,7 +1678,7 @@ local photo = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Photo"..text..msg_chat_i
 local video = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Video"..text..msg_chat_id)
 local document = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:File"..text..msg_chat_id)
 local audio = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..text..msg_chat_id)
-local video_note = Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
+local video_note = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
 if Texingt then 
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local NumMsg = Redis:get(TheTOKYO..'TOKYO:Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0

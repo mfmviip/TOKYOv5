@@ -9914,39 +9914,6 @@ local m = "https://t.me/wffhvv/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == 'العاب' or text == 'الالعاب' or text == 'لعبة' or text == 'لعبه' then
-local mfmvv =[[
-✘ ∫ قائمه الالعاب البوت
-ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
-✘ ∫ لعبة المختلف » المختلف
-✘ ∫ لعبة الامثله » امثله
-✘ ∫ لعبة العكس » العكس
-✘ ∫ لعبة الحزوره » حزوره
-✘ ∫ لعبة المعاني » معاني
-✘ ∫ لعبة البات » بات
-✘ ∫ لعبة التخمين » خمن
-✘ ∫ لعبه الاسرع » الاسرع
-✘ ∫ لعبة السمايلات » سمايلات
-ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
-✘ ∫ مجوهراتي ← لعرض عدد الارباح
-✘ ∫ بيع مجوهراتي ← { العدد } ← لبيع كل مجوهره مقابل {50} رساله
-*]]
-
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𝙎𝙤𝙪𝙧𝙘𝙚 𝙏𝙤𝙠𝙔𝙤', url = "https://t.me/TOKYO_TEAM"}
-},
-{
-{text = '𝙈𝙐𝙎𝙏𝘼𝙁𝘼', url = "https://t.me/MFMVIP"}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-
-elseif text == 'الاوامر' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 video = "https://t.me/TOKYO_TEAM/5"
 local T =[[
@@ -10102,7 +10069,7 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'✘ ∫ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
 end
-if text == '،' or text == '،،،' then
+if text == 'هههه' or text == 'ههههه' then
 if not Redis:get(TheTOKYO.."TOKYO:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
@@ -10160,7 +10127,33 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*شـعليڪ بـي عمࢪيي خـلي يـزحف💘☹️ ️*',"md",false, false, false, false, reply_markup)
 end
-
+if text == 'العاب' or text == 'الالعاب' then
+if not Redis:get(TheTOKYO.."TOKYO:Sasa:Jeka"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𝙎𝙤𝙪𝙧𝙘𝙚 𝙏𝙤𝙠𝙔𝙤', url = 't.me/TOKYO_TEAM'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*✘ ∫ قائمه الالعاب البوت
+ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
+✘ ∫ لعبة المختلف » المختلف
+✘ ∫ لعبة الامثله » امثله
+✘ ∫ لعبة العكس » العكس
+✘ ∫ لعبة الحزوره » حزوره
+✘ ∫ لعبة المعاني » معاني
+✘ ∫ لعبة البات » بات
+✘ ∫ لعبة التخمين » خمن
+✘ ∫ لعبه الاسرع » الاسرع
+✘ ∫ لعبة السمايلات » سمايلات
+ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
+✘ ∫ مجوهراتي ← لعرض عدد الارباح
+✘ ∫ بيع مجوهراتي ← { العدد } ← لبيع كل مجوهره مقابل {50} رساله ️*',"md",false, false, false, false, reply_markup)
+end
 if text == 'كلخره' or text == 'كل خره' then
 if not Redis:get(TheTOKYO.."TOKYO:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  

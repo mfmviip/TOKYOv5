@@ -9915,7 +9915,7 @@ local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == 'العاب' or text == 'الالعاب' or text == 'لعبة' or text == 'لعبه' then
-local T =[[
+local mfmvv =[[
 ✘ ∫ قائمه الالعاب البوت
 ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
 ✘ ∫ لعبة المختلف » المختلف

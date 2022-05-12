@@ -11332,7 +11332,7 @@ local user_zog = '['..fne..'](tg://user?id='..zwga_id..')'
 local mony = v[1]
 local emo = emoji[k]
 num = num + 1
-top_mony = top_mony..emo.." ✘ "..user_tag.." 👫 "..user_zog.."  l "..mony.." 💵\n"
+top_mony = top_mony..emo.." - "..user_tag.." 👫 "..user_zog.."  l "..mony.." 💵\n"
 end
 end
 return LuaTele.sendText(msg.chat_id,msg.id,top_mony,"md",true)
@@ -11731,7 +11731,7 @@ local Descriptioontt = modarba[math.random(#modarba)]
 local modarbaa = math.random(1,90);
 if Descriptioontt == "1" or Descriptioontt == "3" then
 ballanceekku = math.floor(coniss / 100 * modarbaa)
-ballanceekkku = math.floor(ballancee ✘ ballanceekku)
+ballanceekkku = math.floor(ballancee - ballanceekku)
 Redis:decrby(TheTOKYO.."nool:flotysb"..msg.sender.user_id , ballanceekku)
 Redis:setex(TheTOKYO.."nnooooo" .. msg.sender.user_id,1200, true)
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ مضاربة فاشلة \n✘ ∫ نسبة الخسارة ⤟ "..modarbaa.."%\n✘ ∫ المبلغ الذي خسرته ⤟ ( "..ballanceekku.." بتكوين 💰 )\n✘ ∫ فلوسك صارت ⤟ ( "..ballanceekkku.." بتكوين 💰 )\n-","md",true)
@@ -11950,7 +11950,7 @@ end
 if gg == hsabe then
 nsba = "خصمت 5% لبنك "..hsabe..""
 UserNameyr = math.floor(UserNamey / 100 * 5)
-UserNameyy = math.floor(UserNamey ✘ UserNameyr)
+UserNameyy = math.floor(UserNamey - UserNameyr)
 Redis:incrby(TheTOKYO.."nool:flotysb"..fsvhhh ,UserNameyy)
 Redis:decrby(TheTOKYO.."nool:flotysb"..msg.sender.user_id ,UserNamey)
 LuaTele.sendText(msg.chat_id,msg.id, "حوالة صادرة من البنك ⤟ ( "..gg.." )\n\nالمرسل : "..news.."\nالحساب رقم : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمستلم : "..newss.."\nالحساب رقم : `"..text.."`\nالبنك : "..hsabe.."\nنوع البطاقة : "..nouu.."\n"..nsba.."\nالمبلغ : "..UserNameyy.." بتكوين 💰","md",true)
@@ -11960,7 +11960,7 @@ Redis:del(TheTOKYO.."transn" .. msg.sender.user_id)
 elseif gg ~= hsabe then
 nsba = "خصمت 10% من بنك لبنك"
 UserNameyr = math.floor(UserNamey / 100 * 10)
-UserNameyy = math.floor(UserNamey ✘ UserNameyr)
+UserNameyy = math.floor(UserNamey - UserNameyr)
 Redis:incrby(TheTOKYO.."nool:flotysb"..fsvhhh ,UserNameyy)
 Redis:decrby(TheTOKYO.."nool:flotysb"..msg.sender.user_id , UserNamey)
 LuaTele.sendText(msg.chat_id,msg.id, "حوالة صادرة من البنك ⤟ ( "..gg.." )\n\nالمرسل : "..news.."\nالحساب رقم : `"..cccc.."`\nنوع البطاقة : "..uuuu.."\nالمستلم : "..newss.."\nالحساب رقم : `"..text.."`\nالبنك : "..hsabe.."\nنوع البطاقة : "..nouu.."\n"..nsba.."\nالمبلغ : "..UserNameyy.." بتكوين 💰","md",true)

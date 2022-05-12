@@ -12123,7 +12123,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص ( '..Con
 end
     K = 'المالك'
     F = '50000000000005'
-    𝙈𝙐𝙎𝙏𝘼𝙁𝘼 = "Was Die . ✘ المالك"
+    MFMVIP = "Was Die . ✘ المالك"
 Redis:incrby(TheTOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TheTOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..𝙈𝙐𝙎𝙏𝘼𝙁𝘼.."\nالمبلغ : "..F.." بتكوين 💰\nوظيفتك : مالك البوت وعلى راسي \nنوع العملية : اضافة الاستحقاق\nرصيدك الآن : "..ballancee.." بتكوين 💰"

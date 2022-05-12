@@ -1604,7 +1604,7 @@ return false
 end
 end
 if text and text:match("^(.*)$") then
-if Redis:get(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id.."") == "true2" then
+if Redis:get(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id.."") == "true2" then
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..text..msg_chat_id)   
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Vico"..text..msg_chat_id)   
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
@@ -1616,7 +1616,7 @@ Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..text..msg_chat_id)
 Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 Redis:srem(TheTOKYO.."TOKYO:List:Manager"..msg_chat_id.."", text)
-LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تم حذف الرد من ردود المدير ","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تم حذف الرد من الردود ","md",true)  
 return false
 end
 end
@@ -1636,14 +1636,14 @@ local NumMsg = Redis:get(TheTOKYO..'TOKYO:Num:Message:User'..msg_chat_id..':'..m
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(TheTOKYO..'TOKYO:Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
-local Text = Text:gsub('#username',(UserInfo.username or 'لا يوجد')) 
-local Text = Text:gsub('#name',UserInfo.first_name)
-local Text = Text:gsub('#id',msg.sender.user_id)
-local Text = Text:gsub('#edit',NumMessageEdit)
-local Text = Text:gsub('#msgs',NumMsg)
-local Text = Text:gsub('#stast',Status_Gps)
-LuaTele.sendText(msg_chat_id,msg_id,Text,"md",true)  
-end
+local Text = Text:gsub('#اليوزر',(UserInfo.username or 'لا يوجد')) 
+local Text = Text:gsub('#الاسم',UserInfo.first_name)
+local Text = Text:gsub('#الايدي',msg.sender.user_id)
+local Text = Text:gsub('#التعديل',NumMessageEdit)
+local Text = Text:gsub('#الرسائل',NumMsg)
+local Text = Text:gsub('#الرتبه',Status_Gps)
+LuaTele.sendText(msg_chat_id,msg_id,'['..Text..']',"md",false, false, false, false, reply_markup)  
+  end
 if video_note then
 LuaTele.sendVideoNote(msg_chat_id, msg.id, video_note)
 end
@@ -1678,21 +1678,21 @@ local photo = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Photo"..text..msg_chat_i
 local video = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Video"..text..msg_chat_id)
 local document = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:File"..text..msg_chat_id)
 local audio = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..text..msg_chat_id)
-local video_note = Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
+local video_note = Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
 if Texingt then 
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local NumMsg = Redis:get(TheTOKYO..'TOKYO:Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
 local TotalMsg = Total_message(NumMsg) 
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(TheTOKYO..'TOKYO:Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
-local Texingt = Texingt:gsub('#username',(UserInfo.username or 'لا يوجد')) 
-local Texingt = Texingt:gsub('#name',UserInfo.first_name)
-local Texingt = Texingt:gsub('#id',msg.sender.user_id)
-local Texingt = Texingt:gsub('#edit',NumMessageEdit)
-local Texingt = Texingt:gsub('#msgs',NumMsg)
-local Texingt = Texingt:gsub('#stast',Status_Gps)
-LuaTele.sendText(msg_chat_id,msg_id,Texingt,"md",true)  
-end
+local Texingt = Texingt:gsub('#اليوزر',(UserInfo.username or 'لا يوجد')) 
+local Texingt = Texingt:gsub('#الاسم',UserInfo.first_name)
+local Texingt = Texingt:gsub('#الايدي',msg.sender.user_id)
+local Texingt = Texingt:gsub('#التعديل',NumMessageEdit)
+local Texingt = Texingt:gsub('#الرسائل',NumMsg)
+local Texingt = Texingt:gsub('#الرتبه',Status_Gps)
+LuaTele.sendText(msg_chat_id,msg_id,'['..Texingt..']',"md",false, false, false, false, reply_markup)  
+  end
 if video_note then
 LuaTele.sendVideoNote(msg_chat_id, msg.id, video_note)
 end
@@ -1735,7 +1735,7 @@ if text then
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
-text = text:gsub("*","") 
+text = text:gsub("","") 
 Redis:set(TheTOKYO.."TOKYO:Add:Rd:Sudo:Text"..test, text)  
 end  
 if msg.content.audio then
@@ -1760,7 +1760,7 @@ idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
 Redis:set(TheTOKYO.."TOKYO:Add:Rd:Sudo:Photo"..test, idPhoto)  
 end
-LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تم حفظ رد للمطور \n✘ ∫ ارسل ( "..test.." ) لرئية الرد","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اضفت الرد بنجاح \n✘ ∫ ارسل ( "..test.." ) لتشوف الرد","md",true)  
 return false
 end  
 end
@@ -1773,28 +1773,26 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- تغيير الرد', data = msg.sender.user_id..'/chengreplys'},
+{text = '✘ تغيير الرد', data = msg.sender.user_id..'/chengreplys'},
 },
 {
-{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
+{text = '✘ الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝙎𝙤𝙪𝙧𝙘𝙚 𝙏𝙤𝙠𝙔𝙤 ⁦', url='https://t.me/TOKYO_TEAM'},
+{text = '𝙎𝙤𝙪𝙧𝙘𝙚 𝙏𝙤𝙠𝙔𝙤', url='https://t.me/TOKYO_TEAM'},
 },
 }
 }
 LuaTele.sendText(msg_chat_id,msg_id,[[
-✘ ∫ ارسل لي الرد سواء كان 
-❨ ملف • ملصق • متحركه • صوره
- • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-✘ ∫ يمكنك اضافة الى النص •
+‎✘ ∫ اهلا عزيزي , ارسل لي الرد الأن 
+‎✘ ∫ ( ملف,ملصق,متحركه,صوره,فيديو,بصمه فيديو,بصمه,صوت, رساله )
+‎✘ ∫ يُمكنك اضافة الى النص 
 ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷
- `#username` ↬ معرف المستخدم
- `#msgs` ↬ عدد الرسائل
- `#name` ↬ اسم المستخدم
- `#id` ↬ ايدي المستخدم
- `#stast` ↬ رتبة المستخدم
- `#edit` ↬ عدد السحكات
+‎✘ ∫ `#اليوزر` ⤟ يوزر المستخدم
+‎✘ ∫ `#الرسائل` ⤟ رسائل المستخدم
+‎✘ ∫ `#الاسم` ⤟ اسم المستخدم
+‎✘ ∫ `#الرتبه` ⤟ رتبه المستخدم
+‎✘ ∫ `#الايدي` ⤟ ايدي المستخدم
 
 ]],"md",true, false, false, false, reply_markup)
 return false

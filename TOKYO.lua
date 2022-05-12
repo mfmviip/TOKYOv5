@@ -10081,7 +10081,7 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'✘ ∫ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'الالعاب' then
+elseif text == 'الاالعاب' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end

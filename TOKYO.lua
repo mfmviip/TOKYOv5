@@ -9398,7 +9398,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-Redis:set(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
+Redis:set(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اهلا عزيزي , ارسل الان الرد لأضافته","md",true)  
 end
 if text == "حذف رد" then

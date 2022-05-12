@@ -10770,6 +10770,9 @@ local texting = {"اخر افلام شاهدتها",
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
+if text == "لعبة" or text == "الالعاب" or text == "لعبه" or text == "العاب" then
+LuaTele.sendText(msg.chat_id,msg.id,"♛ قائمه الالعاب البوت ♛\n\nٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n\n❖ لعبة المختلف ⤠ المختلف\n\n❖ لعبة الامثله ⤠ امثله\n\n❖ لعبة العكس ⤠ العكس\n\n❖ لعبة الحزوره ⤠ حزوره\n\n❖ لعبة المعاني ⤠ معاني\n\n❖ لعبة البات ⤠ بات\n\n❖ لعبة التخمين ⤠ خمن\n\n❖ لعبة السمايلات ⤠ سمايلات\n\n❖ لعبه الاسرع ⤠ الاسرع\n\nٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n\n❖ مجوهراتي ← لعرض عدد الارباح\n\n❖ بيع مجوهراتي ←  العدد  ← لبيع كل مجوهره مقابل {50} رساله\n\nٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n\n♡","md",true)
+end
 if text == "خيرني" or text == "لو خيروك" or text == "خيروك" then 
 if Redis:get(TheTOKYO.."TOKYO:Status:Games"..msg.chat_id) then
 local texting = {"لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",

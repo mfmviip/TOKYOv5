@@ -157,7 +157,7 @@ StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 911945965 then
 Status = 'مبرمج السورس'
 elseif UserId == 758381470 then
-Status = 'القيادة حمادة '
+Status = 'القيادة #حمادة '
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheTOKYO then

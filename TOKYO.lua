@@ -9353,34 +9353,34 @@ Redis:del(TheTOKYO.."TOKYO:List:Manager"..msg_chat_id)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تم مسح قائمه ردود المدير","md",true)  
 end
-if text == ("ردود المدير") then
+if text == ("الردود") then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheTOKYO..'TOKYO:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n✘ ∫ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-local list = Redis:smembers(TheTOKYO.."TOKYO:List:Manager"..msg_chat_id.."")
-text = "✘ ∫ قائمه ردود المدير \nٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n"
+local list = Redis:smembers(TOKYO.."TOKYO:List:Manager"..msg_chat_id.."")
+text = "✘ ∫ قائمه الردود \nٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n"
 for k,v in pairs(list) do
-if Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..v..msg_chat_id) then
+if Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Gif"..v..msg_chat_id) then
 db = "متحركه 🎭"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Vico"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Vico"..v..msg_chat_id) then
 db = "بصمه 📢"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..v..msg_chat_id) then
 db = "ملصق 🃏"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Text"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Text"..v..msg_chat_id) then
 db = "رساله ✉"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Photo"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Photo"..v..msg_chat_id) then
 db = "صوره 🎇"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Video"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Video"..v..msg_chat_id) then
 db = "فيديو 📹"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:File"..v..msg_chat_id) then
-db = "ملف ✘"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:File"..v..msg_chat_id) then
+db = "ملف ✘ ∫ "
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:Audio"..v..msg_chat_id) then
 db = "اغنيه 🎵"
-elseif Redis:get(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..v..msg_chat_id) then
+elseif Redis:get(TOKYO.."TOKYO:Add:Rd:Manager:video_note"..v..msg_chat_id) then
 db = "بصمه فيديو 🎥"
 end
 text = text..""..k.." » {"..v.."} » {"..db.."}\n"
@@ -9392,14 +9392,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,"["..text.."]","md",true)
 end
 if text == "اضف رد" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheTOKYO..'TOKYO:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n✘ ∫ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-Redis:set(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ ارسل الان الكلمه لاضافتها في ردود المدير ","md",true)  
+Redis:set(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
+return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اهلا عزيزي , ارسل الان الرد لأضافته","md",true)  
 end
 if text == "حذف رد" then
 if not msg.Addictive then

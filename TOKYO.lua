@@ -1516,36 +1516,36 @@ Redis:del(TheTOKYO.."TOKYO:Set:Description:" .. msg_chat_id .. ":" .. msg.sender
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تم حفظ وصف المجموعه","md",true)  
 end  
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
-local test = Redis:get(TOKYO.."TOKYO:Text:Manager"..msg.sender.user_id..":"..msg_chat_id.."")
-if Redis:get(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true1" then
-Redis:del(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
+local test = Redis:get(TheTOKYO.."TOKYO:Text:Manager"..msg.sender.user_id..":"..msg_chat_id.."")
+if Redis:get(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true1" then
+Redis:del(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 if msg.content.sticker then   
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..test..msg_chat_id, msg.content.sticker.sticker.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..test..msg_chat_id, msg.content.sticker.sticker.remote.id)  
 end   
 if msg.content.voice_note then  
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Vico"..test..msg_chat_id, msg.content.voice_note.voice.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Vico"..test..msg_chat_id, msg.content.voice_note.voice.remote.id)  
 end   
 if text then   
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("","") 
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Text"..test..msg_chat_id, text)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Text"..test..msg_chat_id, text)  
 end  
 if msg.content.audio then
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Audio"..test..msg_chat_id, msg.content.audio.audio.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..test..msg_chat_id, msg.content.audio.audio.remote.id)  
 end
 if msg.content.document then
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:File"..test..msg_chat_id, msg.content.document.document.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:File"..test..msg_chat_id, msg.content.document.document.remote.id)  
 end
 if msg.content.animation then
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Gif"..test..msg_chat_id, msg.content.animation.animation.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..test..msg_chat_id, msg.content.animation.animation.remote.id)  
 end
 if msg.content.video_note then
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:video_note"..test..msg_chat_id, msg.content.video_note.video.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..test..msg_chat_id, msg.content.video_note.video.remote.id)  
 end
 if msg.content.video then
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Video"..test..msg_chat_id, msg.content.video.video.remote.id)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Video"..test..msg_chat_id, msg.content.video.video.remote.id)  
 end
 if msg.content.photo then
 if msg.content.photo.sizes[1].photo.remote.id then
@@ -1556,25 +1556,25 @@ elseif msg.content.photo.sizes[3].photo.remote.id then
 idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
 print(idPhoto)
-Redis:set(TOKYO.."TOKYO:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
+Redis:set(TheTOKYO.."TOKYO:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اضفت الرد بنجاح \n✘ ∫ ارسل ( "..test.." ) لتشوف الرد","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
 if Redis:get(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
-Redis:set(TOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(TOKYO.."TOKYO:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Gif"..text..msg_chat_id)   
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Vico"..text..msg_chat_id)   
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Text"..text..msg_chat_id)   
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Photo"..text..msg_chat_id)
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Video"..text..msg_chat_id)
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:File"..text..msg_chat_id)
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
-Redis:del(TOKYO.."TOKYO:Add:Rd:Manager:Audio"..text..msg_chat_id)
-Redis:sadd(TOKYO.."TOKYO:List:Manager"..msg_chat_id.."", text)
+Redis:set(TheTOKYO.."TOKYO:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
+Redis:set(TheTOKYO.."TOKYO:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Gif"..text..msg_chat_id)   
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Vico"..text..msg_chat_id)   
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Text"..text..msg_chat_id)   
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Photo"..text..msg_chat_id)
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Video"..text..msg_chat_id)
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:File"..text..msg_chat_id)
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:video_note"..text..msg_chat_id)
+Redis:del(TheTOKYO.."TOKYO:Add:Rd:Manager:Audio"..text..msg_chat_id)
+Redis:sadd(TheTOKYO.."TOKYO:List:Manager"..msg_chat_id.."", text)
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {

@@ -1164,7 +1164,16 @@ end
 end
 end
 end 
-
+if msg then
+local UserInfo = LuaTele.getUser(msg.sender.user_id)
+if UserInfo.first_name then
+NameLUser = UserInfo.first_name
+NameLUser = NameLUser:gsub("]","")
+NameLUser = NameLUser:gsub("[[]","")
+local data = LuaTele.getChat(msg.chat_id)
+Redis:set(TheTOKYO..':toob:Name:'..msg.sender.user_id,NameLUser)
+end
+end
 if msg.content.luatele == "messageContact" and not msg.Distinguished then  -- الجهات
 local Contact_Group = Redis:get(TheTOKYO.."TOKYO:Lock:Contact"..msg_chat_id)
 if Contact_Group == "del" then

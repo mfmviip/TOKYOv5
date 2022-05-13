@@ -6696,6 +6696,16 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if text == "قران" then
+Abs = math.random(2,140); 
+local Text ='*✘ ∫ تم اختيار قران لك فقط*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '❲ 𝙎𝙤𝙪𝙧𝙘𝙚 𝙏𝙤𝙠𝙔𝙤 ❳',url="t.me/TOKYO_TEAM"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/djsjdjdd/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "ميمز" then
 Abs = math.random(2,140); 
 local Text ='*✘ ∫ تم اختيار الميمز لك فقط*'

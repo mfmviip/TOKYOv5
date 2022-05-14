@@ -15013,7 +15013,7 @@ tt = "["..fne.."]("..fne..")"
   MF = " ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n*• you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر بينحظر من اللعبه وتتصفر فلوسه*"
   end
   end
-  LuaTele.editMessageText(ChatId,Msg_id,top_mony..MF, "md", true, false, reply_markup)
+  LuaTele.editMessageText(ChatId,Msg_id,top_mony..MF.., "md", true, false, reply_markup)
   end
   end
 if Text and Text:match('(%d+)/web') then

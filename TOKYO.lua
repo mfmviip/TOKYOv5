@@ -158,9 +158,9 @@ if UserId == 911945965 then
 Status = 'مبرمج السورس'
 elseif UserId == 758381470 then
 Status = 'القيادة حمادة '
-elseif UserId == 5155577461 then
+elseif ChatId == 5155577461 then
 Status = 'حكك المبرمج '
-elseif UserId == 2052003627 then
+elseif ChatId == 2052003627 then
 Status = 'حكك حمادة '
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -911,10 +911,10 @@ msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 758381470 then
 msg.Name_Controller = 'القيادة حمادة '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 5155577461 then
+elseif tonumber(msg.sender.chat_id) == 5155577461 then
 msg.Name_Controller = 'حكك المبرمج '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 2052003627 then
+elseif tonumber(msg.sender.chat_id) == 2052003627 then
 msg.Name_Controller = 'حكك حمادة '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  

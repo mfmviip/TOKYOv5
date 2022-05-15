@@ -158,10 +158,8 @@ if UserId == 911945965 then
 Status = 'مبرمج السورس'
 elseif UserId == 758381470 then
 Status = 'القيادة حمادة '
-elseif UserId == 5155577461 then
-Status = 'حكك المبرمج '
-elseif UserId == 2052003627 then
-Status = 'حكك حمادة '
+elseif UserId == 420693277 then
+Status = 'مطور السورس '
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TOKYO then
@@ -911,11 +909,8 @@ msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 758381470 then
 msg.Name_Controller = 'القيادة حمادة '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 5155577461 then
-msg.Name_Controller = 'حكك المبرمج '
-msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 2052003627 then
-msg.Name_Controller = 'حكك حمادة '
+elseif tonumber(msg.sender.user_id) == 420693277 then
+msg.Name_Controller = 'مطور السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -9936,7 +9931,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 video = "https://t.me/TOKYO_TEAM/5"
 local T =[[
-𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙤𝙠𝙔𝙤 𝙎𝙤𝙪𝙧𝙘𝙚 : [𝙏𝙤𝙠𝙔𝙤](https://t.me/TOKYO_TEAM)
+[𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝙏𝙤𝙠𝙔𝙤 𝙎𝙤𝙪𝙧𝙘𝙚](https://t.me/TOKYO_TEAM)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {

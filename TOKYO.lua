@@ -6644,7 +6644,7 @@ return false
 end 
 if text == "@all" or text == "تاك عام" or text == "all" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 x = 0

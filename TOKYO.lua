@@ -10375,8 +10375,8 @@ local NameBots = {
 "ها "..NamesBot.. " شتريد؟",
 "أჂ̤ أჂ̤ هياتني اني",
 "موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات طوكيو بعدين اجاوبك",
-"راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
+"عيونه لطوكيو",
+"راح نفطس ونته بعدك تصيح "..NamesBot,
 'يمعود والله نعسان'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
@@ -10384,9 +10384,9 @@ end
 if text == "بوت" then
 local NamesBot = (Redis:get(TOKYO.."TOKYO:Name:Bot") or "طوكيو")
 local BotName = {
-"باوع لك خليني احبك وصيحلي باسمي "..NamesBot,
-"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..NamesBot.. "",
-"راح نموت بكورونا ونته بعدك تصيح بوت"
+" خليني احبك وصيحلي باسمي "..NamesBot,
+"لتخليني ارزلك وردا ترا اسمي "..NamesBot.. "",
+"راح نفطس ونته بعدك تصيح بوت"
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end

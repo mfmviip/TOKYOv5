@@ -11307,7 +11307,7 @@ num = num + 1
 gflos = string.format("%d", mony):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
 top_mony = top_mony..emo.." *"..gflos.." 💰* l "..tt.." \n"
 gflous = string.format("%d", ballancee):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
-MF = " ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n*✘ ∫ you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر بينحظر من اللعبه وتتصفر فلوسه*"
+MF = " ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n*✘ ∫ you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر ينحظر من اللعبه وتتصفر فلوسه*"
 end
 end
 return LuaTele.sendText(msg.chat_id,msg.id,top_mony..MF,"md",true)
@@ -11315,9 +11315,9 @@ end
 if text == "توب المتزوجين" then
 local bank_users = Redis:smembers(TOKYO.."almtzog"..msg_chat_id)
 if #bank_users == 0 then
-return LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ لا يوجد متزوجين بالقروب","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ لا يوجد متزوجين بالكروب","md",true)
 end
-top_mony = "توب اغنى 10 زوجات بالقروب :\n\n"
+top_mony = "توب اغنى 10 زوجات بالكروب :\n\n"
 mony_list = {}
 for k,v in pairs(bank_users) do
 local mony = Redis:get(TOKYO.."mznom"..msg_chat_id..v) 
@@ -11373,10 +11373,10 @@ local coniss = coniss:gsub('٩','9')
 local coniss = tonumber(coniss)
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ غبي تبي تتزوج نفسك!\n","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ غبي تريد تتزوج نفسك!\n","md",true)
 end
 if tonumber(Message_Reply.sender.user_id) == tonumber(TOKYO) then
-return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ غبي تبي تتزوج بوت!\n","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ غبي تريد تتزوج بوت!\n","md",true)
 end
 if Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."rgalll2:") then
 local zwga_id = Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."rgalll2:") 
@@ -11384,7 +11384,7 @@ local zoog2 = Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."rgalll2:")
 local albnt = LuaTele.getUser(zoog2)
 fne = Redis:get(TOKYO..':toob:Name:'..zoog2)
 albnt = "["..fne.."](tg://user?id="..zoog2..") "
-return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ الحق ي : "..albnt.." زوجك يبي يتزوج ","md")
+return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ لج تعاي : "..albnt.."  زوجج يريد يتزوج عليج ","md")
 end
 if Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."bnttt2:") then
 local zwga_id = Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."bnttt2:") 
@@ -11392,11 +11392,11 @@ local zoog2 = Redis:get(TOKYO..msg_chat_id..zwga_id.."rgalll2:")
 local id_rgal = LuaTele.getUser(zwga_id)
 fne = Redis:get(TOKYO..':toob:Name:'..zwga_id)
 alzog = "["..fne.."](tg://user?id="..zwga_id..") "
-return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ الحقي ي : "..alzog.." زوجتك تبي تتزوج ","md")
+return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ لك تعال : "..alzog.."  زوجتك تريد تتزوج عليك ","md")
 end
 ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
-if tonumber(coniss) < 1000 then
-return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ المهر لازم اكثر من 1000 دولار 💰\n","md",true)
+if tonumber(coniss) < 5000 then
+return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ المهر لازم اكثر من 5000 دولار 💰\n","md",true)
 end
 if tonumber(ballancee) < tonumber(coniss) then
 return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ فلوسك ماتكفي للمهر\n","md",true)
@@ -11429,7 +11429,7 @@ local zoog2 = Redis:get(TOKYO..msg_chat_id..zwga_id.."rgalll2:")
 local id_rgal = LuaTele.getUser(zwga_id)
 fne = Redis:get(TOKYO..':toob:Name:'..zwga_id)
 alzog = "["..fne.."](tg://user?id="..zwga_id..") "
-return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ ي : "..alzog.." زوجتك تبيك ","md")
+return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تعال : "..alzog.." زوجتك تريدك ","md")
 else
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اطلبي الله ودوري لك ع زوج ","md")
 end
@@ -11442,7 +11442,7 @@ local zoog2 = Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."rgalll2:")
 local albnt = LuaTele.getUser(zoog2)
 fne = Redis:get(TOKYO..':toob:Name:'..zoog2)
 albnt = "["..fne.."](tg://user?id="..zoog2..") "
-return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ ي : "..albnt.." زوجك يبيك ","md")
+return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ تعالي : "..albnt.." زوجك يريدك ","md")
 else
 return LuaTele.sendText(msg_chat_id,msg_id,"✘ ∫ اطلب الله ودورلك ع زوجه ","md")
 end
@@ -11486,7 +11486,7 @@ local zoog2 = Redis:get(TOKYO..msg_chat_id..zwga_id.."rgalll2:")
 local mhrr = Redis:get(TOKYO..msg_chat_id..msg.sender.user_id.."mhrrr2:")
 ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 if tonumber(ballancee) < tonumber(mhrr) then
-return LuaTele.sendText(msg.chat_id,msg.id, "عشان تخلعينه لازم تجمعين "..mhrr.." دولار\n-","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id, "اذا تردين تخلعينه لازم تجمعين "..mhrr.." دولار\n-","md",true)
 end
 local MF = LuaTele.getUser(zwga_id)
 alzog = " "..MF.first_name.." "
@@ -11537,11 +11537,11 @@ return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ لديك حساب بنكي 
 end
 Redis:setex(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true)
 LuaTele.sendText(msg.chat_id,msg.id,[[
-✘ ∫ عشان تسوي حساب لازم تختار نوع البطاقة
+✘ ∫ اذا تريد تسوي حساب لازم تختار نوع البطاقة
 
-⤟︎ `بينانس .`
-⤟︎ `بلوك چاين .`
-⤟︎ `كوين بيس .`
+⤟︎ `فيزا .`
+⤟︎ `ماستر .`
+⤟︎ `كي كارد .`
 
 ✘ اضغط للنسخ
 
@@ -11549,7 +11549,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 return false
 end
 if Redis:get(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) then
-if text == "بينانس ." then
+if text == "فيزا ." then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11570,9 +11570,9 @@ Redis:set(TOKYO.."nonallban"..creditcc,text)
 Redis:set(TOKYO.."nonallid"..creditcc,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( بينانس . 💳 )  \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditcc.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( فيزا . 💳 )  \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditcc.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)  
 end 
-if text == "بلوك چاين ." then
+if text == "ماستر ." then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11593,9 +11593,9 @@ Redis:set(TOKYO.."nonallban"..creditvi,text)
 Redis:set(TOKYO.."nonallid"..creditvi,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( بلوك چاين . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditvi.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( ماستر . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditvi.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
 end 
-if text == "كوين بيس ." then
+if text == "كي كارد ." then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11616,7 +11616,7 @@ Redis:set(TOKYO.."nonallban"..creditex,text)
 Redis:set(TOKYO.."nonallid"..creditex,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ سويت لك حساب في البنك ( كوين بيس . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditex.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ سويت لك حساب في البنك ( كي كارد . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditex.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
 end 
 end
 if text == 'مسح حساب بنكي' or text == 'مسح حسابي' or text == 'حذف حسابي' or text == 'مسح حساب البنكي' or text =='مسح الحساب بنكي' or text =='مسح الحساب البنكي' or text == "مسح حسابي البنكي" or text == "مسح حسابي بنكي" then
@@ -11671,7 +11671,7 @@ end
 if text == 'فلوسي' or text == 'فلوس' and tonumber(msg.reply_to_message_id) == 0 then
 ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 if tonumber(ballancee) < 1 then
-return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك فلوس ارسل الالعاب وابدأ بجمع الفلوس \n-","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك فلوس ارسل راتب وابدأ بجمع الفلوس \n-","md",true)
 end
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ فلوسك `"..ballancee.."` دولار 💰","md",true)
 end
@@ -11680,7 +11680,7 @@ if text == 'فلوسه' or text == 'فلوس' and tonumber(msg.reply_to_message_
 local Remsg = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Remsg.sender.user_id)
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
-LuaTele.sendText(msg.chat_id,msg.id,"\nيا غبي ذا بوتتتت","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,"\nيا غبي هذا بوت","md",true)  
 return false
 end
 ballanceed = Redis:get(TOKYO.."nool:flotysb"..Remsg.sender.user_id) or 0
@@ -11700,7 +11700,7 @@ MF = Redis:get(TOKYO.."nnonb"..msg.sender.user_id)
 uuuu = Redis:get(TOKYO.."nnonbn"..msg.sender.user_id)
 pppp = Redis:get(TOKYO.."zrffdcf"..msg.sender.user_id) or 0
 ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
-LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ الاسم ⤟ "..news.."\n✘ ∫ الحساب ⤟ `"..cccc.."`\n✘ ∫ بنك ⤟ ( "..MF.." )\n✘ ∫ نوع ⤟ ( "..uuuu.." )\n✘ ∫ الرصيد ⤟ ( "..ballancee.." دولار 💰 )\n✘ ∫ الزرف ( "..pppp.." دولار 💰 )\n-","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ الاسم ⤟ "..news.."\n✘ ∫ الحساب ⤟ `"..cccc.."`\n✘ ∫ بنك ⤟ ( "..MF.." )\n✘ ∫ نوع ⤟ ( "..uuuu.." )\n✘ ∫ الرصيد ⤟ ( "..ballancee.." دولار 💰 )\n✘ ∫ السرقة ( "..pppp.." دولار 💰 )\n-","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك حساب بنكي ارسل ⤟ ( `انشاء حساب بنكي` )","md",true)
 end
@@ -11714,7 +11714,7 @@ local check_time = Redis:ttl(TOKYO.."nnooooo" .. msg.sender.user_id)
 rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ماتكدر تضارب الآن\n✘ ∫ تعال بعد "..rr.." دقيقة") 
 end
-LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`مضاربه` المبلغ","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`مضاربه` المبلغ","md",true)
 end
 if text and text:match('^مضاربه (.*)$') then
 local UserName = text:match('^مضاربه (.*)$')
@@ -11827,8 +11827,8 @@ if text == 'تصفير فلوسي' then
 Redis:del(TOKYO.."nool:flotysb"..msg.sender.user_id)
 LuaTele.sendText(msg.chat_id,msg.id, "تم تصفير فلوسك","md",true)
 end
-if text == "البنك" or text == "بنك" or text == "بنكي" then
-LuaTele.sendText(msg.chat_id,msg.id,"✘ اوامر البنك\n\n✘ انشاء حساب بنكي  ⤟ تسوي حساب وتقدر تحول فلوس مع مزايا ثانيه\n\n✘ مسح حساب بنكي  ⤟ تلغي حسابك البنكي\n\n✘ تحويل ⤟ تطلب رقم حساب الشخص وتحول له فلوس\n\n✘ حسابي  ⤟ يطلع لك رقم حسابك عشان تعطيه للشخص اللي بيحول لك\n\n✘ فلوسي ⤟ يعلمك كم فلوسك\n\n✘ راتب ⤟ يعطيك راتب كل ١٠ دقائق\n\n✘ بخشيش ⤟ يعطيك بخشيش كل ١٠ دقايق\n\n✘ زرف ⤟ تزرف فلوس اشخاص كل ١٠ دقايق\n\n✘ استثمار ⤟ تستثمر بالمبلغ اللي تبيه مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜\n\n✘ حظ ⤟ تلعبها بأي مبلغ ياتدبله ياتخسره انت وحظك\n\n✘ مضاربه ⤟ تضارب بأي مبلغ تبيه والنسبة من ٩٠٪؜ ال -٩٠٪؜ انت وحظك\n\n✘ توب الفلوس ⤟ يطلع توب اكثر ناس معهم فلوس بكل القروبات\n\n✘ توب الحراميه ⤟ يطلع لك اكثر ناس زرفوا\n\n✘ زواج  ⤟ تكتبه بالرد على رسالة شخص مع المهر ويزوجك\n\n✘ طلاق ⤟ يطلقك اذا متزوج\n\n✘ خلع  ⤟ يخلع زوجك ويرجع له المهر\n\n✘ زواجات ⤟ يطلع اغلى الزواجات .\n\n♡","md",true)
+if text == "البنك" or text == "بنك" or text == "بنكي" or text == "اوامر البنك" then
+LuaTele.sendText(msg.chat_id,msg.id,"✘ اوامر البنك\n\n✘ انشاء حساب بنكي  ⤟ تسوي حساب وتكدر تحول فلوس مع مزايا ثانيه\n\n✘ مسح حساب بنكي  ⤟ تلغي حسابك البنكي\n\n✘ تحويل ⤟ تطلب رقم حساب الشخص وتحول اله فلوس\n\n✘ حسابي  ⤟ يطلع لك رقم حسابك حته تنطيه للشخص اللي يحول الك\n\n✘ فلوسي ⤟ ينطيك شكد فلوسك\n\n✘ راتب ⤟ بنطيك راتب كل ١٠ دقائق\n\n✘ بخشيش ⤟ ينطيك بخشيش كل ١٠ دقايق\n\n✘ سرقه ⤟ تسرق فلوس اشخاص كل ١٠ دقايق\n\n✘ استثمار ⤟ تستثمر بالمبلغ اللي تريدة مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜\n\n✘ حظ ⤟ تلعبها بأي مبلغ تريدة لو تخسره لو تربح انت وحظك\n\n✘ مضاربه ⤟ تضارب بأي مبلغ تريدة والنسبة من ٩٠٪؜ ال -٩٠٪؜ انت وحظك\n\n✘ توب الفلوس ⤟ يطلع توب اكثر ناس عدهم فلوس بكل الكروبات\n\n✘ توب الحراميه ⤟ يطلع لك اكثر ناس سرقوا\n\n✘ زواج  ⤟ تكتبه بالرد على رسالة شخص مع المهر ويزوجك\n\n✘ طلاق ⤟ يطلقك اذا متزوج\n\n✘ خلع  ⤟ يخلع زوجك ويرجع اله المهر\n\n✘ زواجات ⤟ يطلع اغلى الزواجات .\n\n♡","md",true)
 end
 if text == 'حظ' then
 if Redis:get(TOKYO.."nnooo" .. msg.sender.user_id) then  
@@ -11836,7 +11836,7 @@ local check_time = Redis:ttl(TOKYO.."nnooo" .. msg.sender.user_id)
 rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ماتكدر تلعب لعبة الحظ الآن\n✘ ∫ تعال بعد "..rr.." دقيقة") 
 end
-LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`حظ` المبلغ","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`حظ` المبلغ","md",true)
 end
 
 
@@ -11875,7 +11875,7 @@ end
 
 
 if text == 'تحويل' then
-LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`تحويل` المبلغ","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`تحويل` المبلغ","md",true)
 end
 if text and text:match("^اضافة فلوس (%d+)$") and msg.reply_to_message_id_ == 0 then  
 taha = text:match("^اضافة فلوس (%d+)$")
@@ -11926,7 +11926,7 @@ end
 Redis:set(TOKYO.."transn"..msg.sender.user_id,coniss)
 Redis:setex(TOKYO.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true)
 LuaTele.sendText(msg.chat_id,msg.id,[[
-✘ ∫ ارسل الآن رقم الحساب البنكي الي تبي تحول له
+✘ ∫ ارسل الآن رقم الحساب البنكي الي تريد تحول اله
 
 -
 ]],"md",true)  
@@ -11986,7 +11986,7 @@ Redis:del(TOKYO.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id)
 Redis:del(TOKYO.."transn" .. msg.sender.user_id)
 end
 else
-LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ مافيه حساب بنكي كذا","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماكو هيج حساب بنكي ","md",true)
 Redis:del(TOKYO.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id) 
 Redis:del(TOKYO.."transn" .. msg.sender.user_id)
 end
@@ -12017,7 +12017,7 @@ if Redis:sismember(TOKYO.."noooybgy",msg.sender.user_id) then
 if Redis:get(TOKYO.."nnoo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."nnoo" .. msg.sender.user_id)
 rr = oger(check_time)
-return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ من شوي عطيتك انتظر "..rr.." دقيقة") 
+return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ قبل شويه نطيتك انتظر "..rr.." دقيقة") 
 end
 if Redis:get(TOKYO.."xxxr" .. msg.sender.user_id) then
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , 3000)
@@ -12040,7 +12040,7 @@ if text and text:match("^فلوس @(%S+)$") then
 local UserName = text:match("^فلوس @(%S+)$")
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n✘ ∫ مافيه حساب كذا ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n✘ ∫ ماكو حساب هيج ","md",true)  
 end
 local UserInfo = LuaTele.getUser(UserId_Info.id)
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
@@ -12054,16 +12054,16 @@ LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعنده حساب بنكي ","
 end
 end
 
-if text == 'زرف' and tonumber(msg.reply_to_message_id) == 0 then
+if text == 'سرقه' or text == 'سرقة' and tonumber(msg.reply_to_message_id) == 0 then
 if Redis:get(TOKYO.."polic" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."polic" .. msg.sender.user_id)
 rr = oger(check_time)
-return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ي ظالم توك زارف \n✘ ∫ تعال بعد "..rr.." دقيقة") 
+return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ي ظالم توك سارق \n✘ ∫ تعال بعد "..rr.." دقيقة") 
 end 
-LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`زرف` بالرد","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`سرقه` بالرد","md",true)
 end
 
-if text == 'زرف' or text == 'زرفه' and tonumber(msg.reply_to_message_id) ~= 0 then
+if text == 'سرقه' or text == 'سرقة' and tonumber(msg.reply_to_message_id) ~= 0 then
 local Remsg = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Remsg.sender.user_id)
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
@@ -12071,23 +12071,23 @@ LuaTele.sendText(msg.chat_id,msg.id,"\nيا غبي ذا بوتتتت","md",true)
 return false
 end
 if Remsg.sender.user_id == msg.sender.user_id then
-LuaTele.sendText(msg.chat_id,msg.id,"\nيا غبي تبي تزرف نفسك ؟!","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,"\nيا غبي تبي تسرق نفسك ؟!","md",true)  
 return false
 end
 if Redis:get(TOKYO.."polic" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."polic" .. msg.sender.user_id)
 rr = oger(check_time)
-return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ي ظالم توك زارف \n✘ ∫ تعال بعد "..rr.." دقيقة") 
+return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ي ظالم توك سارق \n✘ ∫ تعال بعد "..rr.." دقيقة") 
 end 
 if Redis:get(TOKYO.."hrame" .. Remsg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."hrame" .. Remsg.sender.user_id)
 rr = oger(check_time)
-return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ زارفينه قبلك \n✘ ∫ يمديك تزرفه بعد "..rr.." دقيقة") 
+return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ سارقينه قبلك \n✘ ∫ تكدر  تسرقه بعد "..rr.." دقيقة") 
 end 
 if Redis:sismember(TOKYO.."noooybgy",Remsg.sender.user_id) then
 ballanceed = Redis:get(TOKYO.."nool:flotysb"..Remsg.sender.user_id) or 0
-if tonumber(ballanceed) < 2000  then
-return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماتكدر تزرفه فلوسه اقل من 2000  دولار 💰","md",true)
+if tonumber(ballanceed) < 200  then
+return LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماتكدر تسرقه فلوسه اقل من 200  دولار 💰","md",true)
 end
 local bann = LuaTele.getUser(msg.sender.user_id)
 if bann.first_name then
@@ -12095,7 +12095,7 @@ newss = "["..bann.first_name.."](tg://user?id="..msg.sender.user_id..")"
 else
 newss = " لا يوجد "
 end
-local hrame = math.random(2000);
+local hrame = math.random(200);
 local ballanceed = Redis:get(TOKYO.."nool:flotysb"..Remsg.sender.user_id) or 0
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , hrame)
 Redis:decrby(TOKYO.."nool:flotysb"..Remsg.sender.user_id , hrame)
@@ -12104,14 +12104,14 @@ Redis:setex(TOKYO.."hrame" .. Remsg.sender.user_id,900, true)
 Redis:incrby(TOKYO.."zrffdcf"..msg.sender.user_id,hrame)
 Redis:sadd(TOKYO.."zrfffidtf",msg.sender.user_id)
 Redis:setex(TOKYO.."polic" .. msg.sender.user_id,300, true)
-LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ خذ يالحرامي زرفته "..hrame.." دولار 💰\n","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ خذ يالحرامي سرقته "..hrame.." دولار 💰\n","md",true)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local NameGroup = Get_Chat.title
 local id = tostring(msg.chat_id)
 gt = string.upper(id:gsub('-100',''))
 gtr = math.floor(msg.id/2097152/0.5)
 telink = "http://t.me/c/"..gt.."/"..gtr..""
-Text = "✘ ∫ الحق الحق على حلالك \n✘ ∫ الشخص ذا : "..newss.."\n✘ ∫ زرفك "..hrame.." دولار 💰 \n✘ ∫ التاريخ : "..os.date("%Y/%m/%d").."\n✘ ∫ الساعة : "..os.date("%I:%M%p").." \n-"
+Text = "✘ ∫ الحق الحق على حلالك \n✘ ∫ الشخص ذا : "..newss.."\n✘ ∫ سرقك "..hrame.." دولار 💰 \n✘ ∫ التاريخ : "..os.date("%Y/%m/%d").."\n✘ ∫ الساعة : "..os.date("%I:%M%p").." \n-"
 keyboard = {}  
 keyboard.inline_keyboard = {
 {{text = NameGroup, url=telink}}, 
@@ -12134,7 +12134,7 @@ URL.escape('translate.google.com/translate_tts?q='..Text..
 "&reply_to_message_id="..msg_id..
 "&disable_web_page_preview=true")
 end
-if text == "تراكو" then
+if text == "ممصصطفاا" then
 if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)
 end
@@ -12152,7 +12152,7 @@ if Redis:sismember(TOKYO.."noooybgy",msg.sender.user_id) then
 if Redis:get(TOKYO.."innoo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."innoo" .. msg.sender.user_id)
 rr = oger(check_time)
-return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ راتبك بينزل بعد "..rr.." دقيقة") 
+return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ راتبك وينزل بعد "..rr.." دقيقة") 
 end 
 if Redis:get(TOKYO.."xxxr" .. msg.sender.user_id) then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -12162,7 +12162,7 @@ else
 neews = " لا يوجد "
 end
 K = 'محظوظ 2x' 
-F = '15000'
+F = '1500'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = 
@@ -12180,7 +12180,7 @@ neews = " لا يوجد "
 end
 if sender == 1 then
 K = 'مهندس 👨🏻‍🏭' 
-F = '3000'
+F = '300'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12188,7 +12188,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 2 then
     K = ' ممرض 🧑🏻‍⚕' 
-    F = '2500'
+    F = '250'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12196,7 +12196,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 3 then
     K = ' معلم 👨🏻‍🏫' 
-    F = '3800'
+    F = '380'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12204,7 +12204,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 4 then
     K = ' سواق 🧍🏻‍♂' 
-    F = '1200'
+    F = '120'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12212,7 +12212,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 5 then
     K = ' دكتور 👨🏻‍⚕️' 
-    F = '4500'
+    F = '450'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12220,7 +12220,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 6 then
     K = ' محامي ⚖️' 
-    F = '6500'
+    F = '650'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12228,7 +12228,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 7 then
     K = ' حداد 🧑🏻‍🏭' 
-    F = '1500'
+    F = '150'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12236,7 +12236,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 8 then
     K = 'طيار 👨🏻‍✈️' 
-    F = '5000'
+    F = '500'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12244,7 +12244,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 9 then
     K = 'حارس أمن 👮🏻' 
-    F = '3500'
+    F = '350'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12252,7 +12252,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 10 then
     K = 'حلاق 💇🏻‍♂' 
-    F = '1400'
+    F = '140'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12260,7 +12260,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 11 then
     K = 'محقق 🕵🏼‍♂' 
-    F = '5000'
+    F = '500'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12268,7 +12268,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 12 then
     K = 'ضابط 👮🏻‍♂' 
-    F = '7500'
+    F = '750'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12276,7 +12276,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 13 then
     K = 'عسكري 👮🏻' 
-    F = '6500'
+    F = '650'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12284,7 +12284,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 14 then
     K = 'عاطل 🙇🏻' 
-    F = '1000'
+    F = '100'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12292,7 +12292,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 15 then
     K = 'رسام 👨🏻‍🎨' 
-    F = '1600'
+    F = '160'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12300,7 +12300,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 16 then
     K = 'ممثل 🦹🏻' 
-    F = '5400'
+    F = '540'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12308,7 +12308,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 17 then
     K = 'مهرج 🤹🏻‍♂' 
-    F = '2000'
+    F = '200'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12316,7 +12316,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 18 then
     K = 'قاضي 👨🏻‍⚖' 
-    F = '8000'
+    F = '800'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12324,7 +12324,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 19 then
     K = 'مغني 🎤' 
-    F = '3400'
+    F = '340'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12332,7 +12332,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 20 then
     K = 'مدرب 🏃🏻‍♂' 
-    F = '2500'
+    F = '250'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12340,7 +12340,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 21 then
     K = 'بحار 🛳' 
-    F = '3500'
+    F = '350'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12348,7 +12348,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 22 then
     K = 'مبرمج 👨🏼‍💻' 
-    F = '3200'
+    F = '320'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12356,7 +12356,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 23 then
     K = 'لاعب ⚽️' 
-    F = '4700'
+    F = '470'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12364,7 +12364,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 24 then
     K = 'كاشير 🧑🏻‍💻' 
-    F = '3000'
+    F = '300'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -12372,7 +12372,7 @@ LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TOKYO.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 25 then
     K = 'مزارع 👨🏻‍🌾' 
-    F = '2300'
+    F = '230'
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولار 💰\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." دولار 💰"
@@ -14835,7 +14835,7 @@ if Text and Text:match("(%d+)/toop5") then
   }
   }
   local bank_users = Redis:smembers(TOKYO.."almtzog"..ChatId)
-  top_mony = "توب اغنى 10 زوجات بالقروب :\n\n"
+  top_mony = "توب اغنى 10 زوجات بالكروب :\n\n"
   mony_list = {}
   for k,v in pairs(bank_users) do
   local mony = Redis:get(TOKYO.."mznom"..ChatId..v)
@@ -15005,7 +15005,7 @@ tt = "["..fne.."]("..fne..")"
   gflos =string.format("%d", mony):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
   top_mony = top_mony..emo.." *"..gflos.." 💰* l "..tt.." \n"
   gflous =string.format("%d", ballancee):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
-  MF = " ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n*• you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر بينحظر من اللعبه وتتصفر فلوسه*"
+  MF = " ٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n*• you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر ينحظر من اللعبه وتتصفر فلوسه*"
   end
   end
   LuaTele.editMessageText(ChatId,Msg_id,top_mony..MF, "md", true, false, reply_markup)

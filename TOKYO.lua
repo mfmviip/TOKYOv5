@@ -6518,6 +6518,18 @@ end
 
 
 --------------------------------------------------------------------------------------------------------------
+if text == "فتح القنوات" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ وخر الامر يخص ( '..Controller_Num(7)..' ) ',"md",true)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
+end 
+Redis:del(TOKYO.."Lock:channell"..msg_chat_id)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"✘ ∫ تم فتح القنوات").unLock,"md",true)  
+return false
+end 
 if text == "فتح الاضافه" then 
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -6779,6 +6791,18 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --------------------------------------------------------------------------------------------------------------
+if text == "قفل القنوات" then 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
+end
+Redis:set(TOKYO.."Lock:channell"..msg_chat_id,true) 
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"✘ ∫ تم قفل القنوات").Lock,"md",true)  
+return false
+end 
 if text == "قفل التكرار" then 
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  

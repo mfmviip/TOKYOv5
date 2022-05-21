@@ -11166,7 +11166,7 @@ if text == "خمن" or text == "تخمين" then
 if Redis:get(TOKYO.."TOKYO:Status:Games"..msg.chat_id) then
 Num = math.random(1,20)
 Redis:set(TOKYO.."TOKYO:Game:Estimate"..msg.chat_id..msg.sender.user_id,Num)  
-return LuaTele.sendText(msg_chat_id,msg_id,"\n✘ ∫ اهلا بك عزيزي في لعبة التخمين :\nٴٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷━━\n".."✘ ∫ ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".."✘ ∫ سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n✘ ∫ اهلا بك عزيزي في لعبة التخمين :\nٴٴ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷\n".."✘ ∫ ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".."✘ ∫ سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ","md",true)  
 end
 end
 if text == "المختلف" then

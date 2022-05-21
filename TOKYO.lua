@@ -2854,7 +2854,7 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true) 
 end
 else
-if photo.total_count > 0 then
+if photo.total_count > 1 then
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,
 '\n*✘ ∫ '..Description..
 '\n✘ ∫ ايديك : '..UserId..

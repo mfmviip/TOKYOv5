@@ -6180,7 +6180,26 @@ end
 LuaTele.setChatMemberStatus(msg.chat_id,msg.sender.user_id,'banned',0)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"✘ ∫ تم طردك من المجموعه بنائآ على طلبك").Reply,"md",true)  
 end
-
+            if text == 'المشرفين' then
+                if not msg.Managers then
+                return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
+                end
+                if ChannelJoin(msg) == false then
+                local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TOKYO..'TOKYO:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TOKYO..'TOKYO:Channel:Join')}, },}}
+                return LuaTele.sendText(msg.chat_id,msg.id,'\n✘ ∫ يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
+                end
+                if msg.can_be_deleted_for_all_users == false then
+                return LuaTele.sendText(msg_chat_id,msg_id,"\n✘ ∫ عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له ","md",true)  
+                end
+                local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "", 0, 200)
+                listAdmin = '\n✘ ∫ قائمه المشرفين \n ⊶─────≺ᴛᴏᴋʏᴏ≻─────⊷n'
+                local List_Members = Info_Members.members
+                for k, v in pairs(List_Members) do
+                if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
+                Creator = '→   المالك '
+                else
+                Creator = ""
+                end
 if text == 'ادمنيه الكروب' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*✘ ∫ هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  

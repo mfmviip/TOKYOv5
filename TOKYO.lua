@@ -11691,8 +11691,6 @@ Redis:del(TOKYO.."ttpppi")
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ مسحت لعبه البنك ","md",true)
 end
 end
-
-
 if text == 'تصفير الحراميه' then
 if msg.ControllerBot then
 local bank_users = Redis:smembers(TOKYO.."zrfffidtf")
@@ -11742,9 +11740,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك حساب بنكي ارسل ⤟ ( `انشاء حساب بنكي` )","md",true)
 end
 end
-
-
-
 if text == 'مضاربه' then
 if Redis:get(TOKYO.."nnooooo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."nnooooo" .. msg.sender.user_id)
@@ -11800,7 +11795,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك حساب بنكي ارسل ⤟ ( `انشاء حساب بنكي` )","md",true)
 end
 end
-
 if text == 'استثمار' then
 if Redis:get(TOKYO.."nnoooo" .. msg.sender.user_id) then  
 local check_time = Redis:ttl(TOKYO.."nnoooo" .. msg.sender.user_id)
@@ -11859,7 +11853,6 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك حساب بنكي ارسل ⤟ ( `انشاء حساب بنكي` )","md",true)
 end
 end
-
 if text == 'تصفير فلوسي' then
 Redis:del(TOKYO.."nool:flotysb"..msg.sender.user_id)
 LuaTele.sendText(msg.chat_id,msg.id, "تم تصفير فلوسك","md",true)
@@ -11875,9 +11868,6 @@ return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ماتكدر تلعب لع�
 end
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`حظ` المبلغ","md",true)
 end
-
-
-
 if text and text:match('^حظ (%d+)$') then
 local coniss = text:match('^حظ (%d+)$')
 if Redis:sismember(TOKYO.."noooybgy",msg.sender.user_id) then

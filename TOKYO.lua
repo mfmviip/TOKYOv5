@@ -11576,9 +11576,9 @@ Redis:setex(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true
 LuaTele.sendText(msg.chat_id,msg.id,[[
 ✘ ∫ اذا تريد تسوي حساب لازم تختار نوع البطاقة
 
-⤟︎ `فيزا .`
-⤟︎ `ماستر .`
-⤟︎ `كي كارد .`
+⤟︎ `فيزا`
+⤟︎ `ماستر`
+⤟︎ `كي كارد`
 
 ✘ اضغط للنسخ
 
@@ -11586,14 +11586,14 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 return false
 end
 if Redis:get(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) then
-if text == "فيزا ." then
+if text == "فيزا" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-MF = "والت كارد ."
+MF = "والت كارد"
 flossst = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(TOKYO.."nonna"..msg.sender.user_id,news)
@@ -11607,16 +11607,16 @@ Redis:set(TOKYO.."nonallban"..creditcc,text)
 Redis:set(TOKYO.."nonallid"..creditcc,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( فيزا . 💳 )  \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditcc.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( فيزا 💳 )  \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditcc.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)  
 end 
-if text == "ماستر ." then
+if text == "ماستر" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-MF = "والت كارد ."
+MF = "والت كارد"
 flossst = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(TOKYO.."nonna"..msg.sender.user_id,news)
@@ -11630,16 +11630,16 @@ Redis:set(TOKYO.."nonallban"..creditvi,text)
 Redis:set(TOKYO.."nonallid"..creditvi,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( ماستر . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditvi.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ وسوينا لك حساب في البنك ( ماستر 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditvi.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
 end 
-if text == "كي كارد ." then
+if text == "كي كارد" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
 else
 news = " لا يوجد"
 end
-MF = "والت كارد ."
+MF = "والت كارد"
 flossst = Redis:get(TOKYO.."nool:flotysb"..msg.sender.user_id) or 0
 local banid = msg.sender.user_id
 Redis:set(TOKYO.."nonna"..msg.sender.user_id,news)
@@ -11653,7 +11653,7 @@ Redis:set(TOKYO.."nonallban"..creditex,text)
 Redis:set(TOKYO.."nonallid"..creditex,banid)
 Redis:sadd(TOKYO.."noooybgy",msg.sender.user_id)
 Redis:del(TOKYO.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ سويت لك حساب في البنك ( كي كارد . 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditex.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n✘ ∫ سويت لك حساب في البنك ( كي كارد 💳 ) \n\n✘ ∫ رقم حسابك ⤟ ( `"..creditex.."` )\n✘ ∫ نوع البطاقة ⤟ ( "..MF.." )\n✘ ∫ فلوسك ⤟ ( `"..flossst.."` دولار 💰 )  ","md",true)   
 end 
 end
 if text == 'مسح حساب بنكي' or text == 'مسح حسابي' or text == 'حذف حسابي' or text == 'مسح حساب البنكي' or text =='مسح الحساب بنكي' or text =='مسح الحساب البنكي' or text == "مسح حسابي البنكي" or text == "مسح حسابي بنكي" then
@@ -12057,14 +12057,14 @@ rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ قبل شويه نطيتك انتظر "..rr.." دقيقة") 
 end
 if Redis:get(TOKYO.."xxxr" .. msg.sender.user_id) then
-Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , 3000)
+Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , 300)
 Redis:sadd(TOKYO.."ttpppi",msg.sender.user_id)
-return LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ خذ بخشيش المحظوظين 3000 دولار 💰","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ هذا بخشيش المحظوظين 300 دولار 💰","md",true)
 end
-local jjjo = math.random(1,2000);
+local jjjo = math.random(1,200);
 Redis:incrby(TOKYO.."nool:flotysb"..msg.sender.user_id , jjjo)
 Redis:sadd(TOKYO.."ttpppi",msg.sender.user_id)
-LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ خذ ي مطفر "..jjjo.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"✘ ∫ هاي اكرامية "..jjjo.." دولار 💰","md",true)
 Redis:setex(TOKYO.."nnoo" .. msg.sender.user_id,600, true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "✘ ∫ ماعندك حساب بنكي ارسل ⤟ ( `انشاء حساب بنكي` )","md",true)

@@ -12097,8 +12097,6 @@ local check_time = Redis:ttl(TOKYO.."polic" .. msg.sender.user_id)
 rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"✘ ∫ ي ظالم توك سارق \n✘ ∫ تعال بعد "..rr.." دقيقة") 
 end 
-LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر هذا :\n\n`سرقه` بالرد","md",true)
-end
 
 if text == 'سرقه' or text == 'سرقة' and tonumber(msg.reply_to_message_id) ~= 0 then
 local Remsg = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -12171,7 +12169,7 @@ URL.escape('translate.google.com/translate_tts?q='..Text..
 "&reply_to_message_id="..msg_id..
 "&disable_web_page_preview=true")
 end
-if text == "ممصصطفاا" then
+if text == "صصططوففي" then
 if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n✘ ∫ الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)
 end
